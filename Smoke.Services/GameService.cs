@@ -79,7 +79,7 @@ namespace Smoke.Services
                         .Games
                         .Single(e => e.GameId == model.GameId);
 
-                entity.Platform = model.Platform;
+                entity.platform = model.platform;
                 entity.GameStore = model.GameStore;
                 entity.HasModSupport = model.HasModSupport;
 
