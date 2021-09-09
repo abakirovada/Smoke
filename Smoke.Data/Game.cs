@@ -11,7 +11,7 @@ namespace Smoke.Data
     public class Game
     {
         [Key]
-        public Guid GameId { get; set; }
+        public int GameId { get; set; }
 
         [Required]
         public string Name { get; set; }
