@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Smoke.Models
+namespace Smoke.Data
 {
-    public class GameListItem
+    public class Platform
     {
-        public Guid GameId { get; set; }
-        public string Name { get; set; }
-
+        
     }
 }

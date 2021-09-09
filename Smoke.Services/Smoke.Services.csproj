@@ -57,11 +57,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Smoke.Data\Smoke.Data.csproj">
+      <Project>{2a013691-44ef-4b05-967f-f709c948f426}</Project>
+      <Name>Smoke.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Smoke.Models\Smoke.Models.csproj">
+      <Project>{4530c142-7691-4925-8406-7df00e0919a6}</Project>
+      <Name>Smoke.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
