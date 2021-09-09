@@ -10,22 +10,16 @@ namespace Smoke.Services
 {
     public class GameService
     {
-        private readonly Guid _userId;
-        public GameService(Guid userId)
-        {
-            _userId = userId;
-        }
-
         public bool CreateGame(GameCreate model)
         {
             var entity = new Game()
             {
-                GameId = _userId,
+                GameId = model.GameId,
                 Name = model.Name,
                 GameStore = model.GameStore,
-                Platform = model.Platform,
-                Genre = model.Genre,
-                MaturityRating = model.MaturityRating,
+                platform = model.platform,
+                genre = model.genre,
+                Maturity_Rating = model.Maturity_Rating,
                 HasModSupport = model.HasModSupport
             };
 
@@ -36,14 +30,14 @@ namespace Smoke.Services
             }
         }
 
-        public IEnumerable<GameListItem> GetGames()
+        public IEnumerable<GameListItem> GetGames(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
                     .Games
-                    .Where(e => e.GameId == _userId)
+                    .Where(e => e.GameId == id)
                     .Select(
                         e =>
                         new GameListItem
@@ -61,15 +55,16 @@ namespace Smoke.Services
             {
                 var entity =
                     ctx.Games
-                    .Single(e => e.GameId == id && e.GameId == _userId);
+                    .Single(e => e.GameId == id);
                 return new GameDetail
                 {
                     GameId = entity.,
+                    GameId = id,
                     Name = entity.Name,
                     GameStore = entity.GameStore,
-                    Platform = entity.Platform,
-                    Genre = entity.Genre,
-                    MaturityRating = entity.MaturityRating,
+                    platform = entity.platform,
+                    genre = entity.genre,
+                    Maturity_Rating = entity.Maturity_Rating,
                     HasModSupport = entity.HasModSupport
                 };
             }
