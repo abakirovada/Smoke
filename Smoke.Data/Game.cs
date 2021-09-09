@@ -21,7 +21,7 @@ namespace Smoke.Data
         public Platform platform { get; set; }
 
         [Required]
-        public Genre genre { get; set; }
+        public List<Genre> genre { get; set; }
 
         [Required]
         public MaturityRating Maturity_Rating { get; set; }
