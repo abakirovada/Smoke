@@ -165,6 +165,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="Genre.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="MaturityRating.cs" />
     <Compile Include="Platform.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

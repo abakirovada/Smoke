@@ -58,6 +58,7 @@ namespace Smoke.Services
                     .Single(e => e.GameId == id);
                 return new GameDetail
                 {
+                    GameId = entity.,
                     GameId = id,
                     Name = entity.Name,
                     GameStore = entity.GameStore,
@@ -66,6 +67,23 @@ namespace Smoke.Services
                     Maturity_Rating = entity.Maturity_Rating,
                     HasModSupport = entity.HasModSupport
                 };
+            }
+        }
+
+        public bool UpdateGame(GameEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Games
+                        .Single(e => e.GameId == model.GameId);
+
+                entity.Platform = model.Platform;
+                entity.GameStore = model.GameStore;
+                entity.HasModSupport = model.HasModSupport;
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }
