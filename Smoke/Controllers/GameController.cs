@@ -18,12 +18,12 @@ namespace Smoke.Controllers
 
         //post
         [HttpPost]
-        public async Task<IHttpActionResult> PostGame(GameService game)
+        public async Task<IHttpActionResult> PostGame(Game game)
         {
             if (ModelState.IsValid)
             {
-                await _context.Games.Add(game);
-
+                _context.Games.Add(game);
+                await _context.SaveChangesAsync();
                 return Ok();
             }
             return BadRequest(ModelState);
@@ -54,9 +54,9 @@ namespace Smoke.Controllers
                     GameId = game.GameId,
                     Name = game.Name,
                     GameStore = game.GameStore,
-                    Platform = game.Platform,
-                    Genre = game.Genre,
-                    MaturityRating = game.MaturityRating,
+                    platform = game.platform,
+                    genre = game.genre,
+                    Maturity_Rating = game.Maturity_Rating,
                     HasModSupport = game.HasModSupport
                 };
                 return Ok(gameDetail);
