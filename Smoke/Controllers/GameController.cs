@@ -65,7 +65,7 @@ namespace Smoke.Controllers
         }
 
         //put
-        [HttpGet]
+        [HttpPut]
         public async Task<IHttpActionResult> UpdateGame([FromUri] int id, [FromBody] GameEdit updatedGame)
         {
             if (!ModelState.IsValid)
