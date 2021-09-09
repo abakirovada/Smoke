@@ -66,11 +66,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Smoke.Data\Smoke.Data.csproj">
-      <Project>{2a013691-44ef-4b05-967f-f709c948f426}</Project>
+      <Project>{2A013691-44EF-4B05-967F-F709C948F426}</Project>
       <Name>Smoke.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Smoke.Models\Smoke.Models.csproj">
-      <Project>{4530c142-7691-4925-8406-7df00e0919a6}</Project>
+      <Project>{4530C142-7691-4925-8406-7DF00E0919A6}</Project>
       <Name>Smoke.Models</Name>
     </ProjectReference>
   </ItemGroup>
