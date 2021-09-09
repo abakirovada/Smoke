@@ -58,7 +58,6 @@ namespace Smoke.Services
                     .Single(e => e.GameId == id);
                 return new GameDetail
                 {
-                    GameId = entity.,
                     GameId = id,
                     Name = entity.Name,
                     GameStore = entity.GameStore,
