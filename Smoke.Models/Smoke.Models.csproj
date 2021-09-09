@@ -54,11 +54,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameCreate.cs" />
+    <Compile Include="GameDetail.cs" />
+    <Compile Include="GameEdit.cs" />
+    <Compile Include="GameListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Smoke.Data\Smoke.Data.csproj">
+      <Project>{2A013691-44EF-4B05-967F-F709C948F426}</Project>
+      <Name>Smoke.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
