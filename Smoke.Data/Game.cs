@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,6 @@ namespace Smoke.Data
         [Required]
         public MaturityRating MaturityRating { get; set; }
 
-        public Modding Modding { get; set; }
+        public bool HasModSupport { get; set; }
     }
 }

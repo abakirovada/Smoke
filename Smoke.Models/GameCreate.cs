@@ -14,6 +14,6 @@ namespace Smoke.Models
         public Platform Platform { get; set; }
         public Genre Genre { get; set; }
         public MaturityRating MaturityRating { get; set; }
-        public Modding Modding { get; set; }
+        public bool HasModSupport { get; set; }
     }
 }

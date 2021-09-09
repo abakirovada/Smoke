@@ -20,6 +20,6 @@ namespace Smoke.Models
 
         public MaturityRating MaturityRating { get; set; }
 
-        public Modding Modding { get; set; }
+        public bool HasModSupport { get; set; }
     }
 }
