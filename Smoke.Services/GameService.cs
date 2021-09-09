@@ -55,7 +55,7 @@ namespace Smoke.Services
                 return query.ToArray();
             }
         }
-        public GameDetail GetGameById(Guid id)
+        public GameDetail GetGameById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -64,7 +64,7 @@ namespace Smoke.Services
                     .Single(e => e.GameId == id && e.GameId == _userId);
                 return new GameDetail
                 {
-                    GameId = _userId,
+                    GameId = entity.,
                     Name = entity.Name,
                     GameStore = entity.GameStore,
                     Platform = entity.Platform,
@@ -72,6 +72,23 @@ namespace Smoke.Services
                     MaturityRating = entity.MaturityRating,
                     HasModSupport = entity.HasModSupport
                 };
+            }
+        }
+
+        public bool UpdateGame(GameEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Games
+                        .Single(e => e.GameId == model.GameId);
+
+                entity.Platform = model.Platform;
+                entity.GameStore = model.GameStore;
+                entity.HasModSupport = model.HasModSupport;
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Smoke.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Smoke.Models
 {
     public class GameDetail
     {
-        public Guid GameId { get; set; }
+        public int GameId { get; set; }
 
         public string Name { get; set; }
 
