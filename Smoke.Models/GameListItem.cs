@@ -8,7 +8,7 @@ namespace Smoke.Models
 {
     public class GameListItem
     {
-        public Guid GameId { get; set; }
+        public int GameId { get; set; }
         public string Name { get; set; }
 
     }

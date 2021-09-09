@@ -11,7 +11,7 @@ namespace Smoke.Data
     public class Game
     {
         [Key]
-        public Guid GameId { get; set; }
+        public int GameId { get; set; }
 
         [Required]
         public string Name { get; set; }
@@ -19,13 +19,13 @@ namespace Smoke.Data
         public string GameStore { get; set; }
 
         [Required]
-        public Platform Platform { get; set; }
+        public Platform platform { get; set; }
 
         [Required]
-        public Genre Genre { get; set; }
+        public Genre genre { get; set; }
 
         [Required]
-        public MaturityRating MaturityRating { get; set; }
+        public MaturityRating Maturity_Rating { get; set; }
 
         public bool HasModSupport { get; set; }
     }
