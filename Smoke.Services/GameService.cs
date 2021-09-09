@@ -10,8 +10,8 @@ namespace Smoke.Services
 {
     public class GameService
     {
-        private readonly Guid _userId;
-        public GameService(Guid userId)
+        private readonly int _userId;
+        public GameService(int userId)
         {
             _userId = userId;
         }
@@ -55,7 +55,7 @@ namespace Smoke.Services
                 return query.ToArray();
             }
         }
-        public GameDetail GetGameById(Guid id)
+        public GameDetail GetGameById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
