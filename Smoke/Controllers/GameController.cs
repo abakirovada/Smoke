@@ -88,5 +88,20 @@ namespace Smoke.Controllers
 
             return Ok();
         }
+        //delete
+        [HttpDelete]
+        public async Task<IHttpActionResult> DeleteGame(int id)
+        {
+            Game game = await _context.Games.FindAsync(id);
+            if (game == null)
+            {
+                return NotFound();
+            }
+
+            _context.Games.Remove(game);
+            await _context.SaveChangesAsync();
+
+            return Ok("You deleted the game.");
+        }
     }
 }

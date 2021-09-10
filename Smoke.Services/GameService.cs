@@ -85,5 +85,20 @@ namespace Smoke.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteGame(int GameId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Games
+                    .Single(e => e.GameId == GameId);
+
+                ctx.Games.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
