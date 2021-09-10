@@ -64,5 +64,29 @@ namespace Smoke.Controllers
             return NotFound();
         }
 
+        //put
+        [HttpPut]
+        public async Task<IHttpActionResult> UpdateGame([FromUri] int id, [FromBody] GameEdit updatedGame)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            Game game = await _context.Games.FindAsync(id);
+
+            if (game == null)
+            {
+                return NotFound();
+            }
+
+            game.platform = updatedGame.platform;
+            game.GameStore = updatedGame.GameStore;
+            game.HasModSupport = updatedGame.HasModSupport;
+
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
     }
 }

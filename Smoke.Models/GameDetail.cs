@@ -17,7 +17,7 @@ namespace Smoke.Models
 
         public Platform platform { get; set; }
 
-        public Genre genre { get; set; }
+        public List<Genre> genre { get; set; }
 
         public MaturityRating Maturity_Rating { get; set; }
 
